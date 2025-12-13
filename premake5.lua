@@ -15,11 +15,6 @@ project "Assimp"
         "include/**.hpp",
         "include/**.inl",
         
-        -- Dependencias internas necesarias (Zlib, Unzip, etc)
-        -- Si ya tenés zlib en tu engine por otro lado, podés quitar esto y linkearlo.
-        "contrib/zlib/**.h",
-        "contrib/zlib/**.c",
-        "contrib/zlib/**.cpp",
         "contrib/unzip/**.h",
         "contrib/unzip/**.c",
         "contrib/irrXML/**.h",
@@ -48,12 +43,7 @@ project "Assimp"
         "code/PostProcessing/*Exporter*",
 
         -- Excluir wrappers de C++ viejos y otros ejemplos de zlib que no necesitamos
-        "contrib/zlib/contrib/iostream/**",
-        "contrib/zlib/contrib/iostream2/**",
-        "contrib/zlib/contrib/ada/**",
-        "contrib/zlib/contrib/delphi/**",
-        "contrib/zlib/contrib/dotzlib/**",
-        "contrib/zlib/contrib/pascal/**",
+        "contrib/zlib/**",
     }
 
     includedirs
@@ -61,7 +51,6 @@ project "Assimp"
         "include",
         "code",
         ".",
-        "contrib/zlib",
         "contrib/unzip",
         "contrib/irrXML",
         "contrib/rapidjson/include",
