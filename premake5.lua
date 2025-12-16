@@ -17,9 +17,9 @@ project "Assimp"
         
         -- Dependencias internas necesarias (Zlib, Unzip, etc)
         -- Si ya tenés zlib en tu engine por otro lado, podés quitar esto y linkearlo.
-        "contrib/zlib/**.h",
-        "contrib/zlib/**.c",
-        "contrib/zlib/**.cpp",
+        -- "contrib/zlib/**.h",
+        -- "contrib/zlib/**.c",
+        -- "contrib/zlib/**.cpp",
         "contrib/unzip/**.h",
         "contrib/unzip/**.c",
         "contrib/irrXML/**.h",
@@ -97,6 +97,8 @@ project "Assimp"
             "contrib/zlib/contrib/testzlib/testzlib.c",
             "contrib/zlib/contrib/testzlib/testzlib.h"
         }
+
+        links { "z" }
 
     filter "system:windows"
         systemversion "latest"
