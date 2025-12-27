@@ -44,7 +44,7 @@ project "Assimp"
         "code/PostProcessing/*Exporter*",
     }
 
-    includedirs
+    externalincludedirs
     {
         "include",
         "code",
@@ -98,6 +98,20 @@ project "Assimp"
         {
             "contrib/zlib/contrib/**",
         }
+
+    filter "system:macosx"
+        systemversion "latest"
+        pic "On"
+
+        removefiles
+        {
+            "contrib/zlib/contrib/minizip/iowin32.c",
+            "contrib/zlib/contrib/minizip/iowin32.h",
+            "contrib/zlib/contrib/testzlib/testzlib.c",
+            "contrib/zlib/contrib/testzlib/testzlib.h"
+        }
+
+        links { "z" }
 
     filter "configurations:Debug"
         runtime "Debug"
