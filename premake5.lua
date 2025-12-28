@@ -42,6 +42,20 @@ project "Assimp"
         "code/**/*Export*",
         
         "code/PostProcessing/*Exporter*",
+
+        -- AGREGAR ESTO PARA SOLUCIONAR EL ERROR DE M3D Y OTROS:
+        "code/**/M3DImporter.cpp",  -- Soluciona tu error actual
+        "code/**/M3DImporter.h",
+        
+        -- Ya que tenés desactivados estos también en 'defines', te conviene sacarlos
+        -- para evitar el mismo error con otros formatos:
+        "code/**/C4DImporter.cpp", 
+        "code/**/C4DImporter.h",
+        "code/**/IFC*.cpp",
+        "code/**/IFC*.h",
+        "code/**/USD*.cpp", 
+        "code/**/USD*.h",
+        "code/**/X3DImporter*.cpp" -- VRML suele usar X3DImporter en Assimp moderno
     }
 
     externalincludedirs
