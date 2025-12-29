@@ -46,6 +46,9 @@ project "Assimp"
         -- AGREGAR ESTO PARA SOLUCIONAR EL ERROR DE M3D Y OTROS:
         "code/**/M3DImporter.cpp",  -- Soluciona tu error actual
         "code/**/M3DImporter.h",
+        "code/**/M3DWrapper.cpp",  -- Soluciona tu error actual
+        "code/**/M3DWrapper.h",
+
         
         -- Ya que tenés desactivados estos también en 'defines', te conviene sacarlos
         -- para evitar el mismo error con otros formatos:
@@ -114,7 +117,7 @@ project "Assimp"
         }
 
     filter "system:macosx"
-        systemversion "latest"
+        systemversion "12.0"
         pic "On"
 
         removefiles
